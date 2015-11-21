@@ -8,8 +8,13 @@
 
 import UIKit
 
+protocol TwicketSegmentedControlDelegate: class {
+    func didSelectSegmentIndex(segmentIndex: Int)
+}
+
 class TwicketSegmentedControl: UIView {
     static let height: CGFloat = 44
+    weak var delegate: TwicketSegmentedControlDelegate?
     var selectedIndex = 0 {
         didSet {
             segmentedControl.selectedSegmentIndex = selectedIndex
@@ -23,17 +28,23 @@ class TwicketSegmentedControl: UIView {
         control.centerY = TwicketSegmentedControl.height/2
         control.tintColor = UIColor.whiteColor()
         return control
-        }()
+    }()
     
-    init(width: CGFloat, initialIndex: Int = 0) {
+    init(width: CGFloat, delegate: TwicketSegmentedControlDelegate, initialIndex: Int = 0) {
         super.init(frame: CGRect(x: 0, y: 0, width: width, height: TwicketSegmentedControl.height))
         addSubview(segmentedControl)
         backgroundColor = Color.mainBlueBackgroundColor
+        self.delegate = delegate
         selectedIndex = initialIndex
         segmentedControl.selectedSegmentIndex = selectedIndex
+        segmentedControl.addTarget(self, action: "didChangeSegmentedControlValue", forControlEvents: .ValueChanged)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func didChangeSegmentedControlValue() {
+        delegate?.didSelectSegmentIndex(segmentedControl.selectedSegmentIndex)
     }
 }
