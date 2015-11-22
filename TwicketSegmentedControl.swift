@@ -15,9 +15,12 @@ protocol TwicketSegmentedControlDelegate: class {
 class TwicketSegmentedControl: UIView {
     static let height: CGFloat = 44
     weak var delegate: TwicketSegmentedControlDelegate?
-    var selectedIndex = 0 {
-        didSet {
-            segmentedControl.selectedSegmentIndex = selectedIndex
+    var selectedIndex: Int {
+        get {
+            return segmentedControl.selectedSegmentIndex
+        }
+        set {
+            segmentedControl.selectedSegmentIndex = newValue
         }
     }
     var items: [String] = []
