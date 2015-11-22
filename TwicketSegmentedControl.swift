@@ -20,9 +20,10 @@ class TwicketSegmentedControl: UIView {
             segmentedControl.selectedSegmentIndex = selectedIndex
         }
     }
+    var items: [String] = []
     
     lazy var segmentedControl: UISegmentedControl = { [unowned self] in
-        let control = UISegmentedControl(items: ["Tweets", "Users"])
+        let control = UISegmentedControl(items: self.items)
         control.frameWidth = self.frameWidth - Margin.m20
         control.centerX = self.frameWidth/2
         control.centerY = TwicketSegmentedControl.height/2
@@ -30,8 +31,9 @@ class TwicketSegmentedControl: UIView {
         return control
     }()
     
-    init(width: CGFloat, delegate: TwicketSegmentedControlDelegate, initialIndex: Int = 0) {
+    init(width: CGFloat, items: [String], delegate: TwicketSegmentedControlDelegate, initialIndex: Int = 0) {
         super.init(frame: CGRect(x: 0, y: 0, width: width, height: TwicketSegmentedControl.height))
+        self.items = items
         addSubview(segmentedControl)
         backgroundColor = Color.mainBlueBackgroundColor
         self.delegate = delegate
