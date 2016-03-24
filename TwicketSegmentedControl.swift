@@ -25,7 +25,7 @@ class TwicketSegmentedControl: UIView {
     }
     var items: [String] = []
     
-    lazy var segmentedControl: UISegmentedControl = { [unowned self] in
+    lazy var segmentedControl: UISegmentedControl = {
         let control = UISegmentedControl(items: self.items)
         control.frameWidth = self.frameWidth - Margin.m20
         control.centerX = self.frameWidth/2
@@ -42,7 +42,7 @@ class TwicketSegmentedControl: UIView {
         self.delegate = delegate
         selectedIndex = initialIndex
         segmentedControl.selectedSegmentIndex = selectedIndex
-        segmentedControl.addTarget(self, action: "didChangeSegmentedControlValue", forControlEvents: .ValueChanged)
+        segmentedControl.addTarget(self, action: #selector(TwicketSegmentedControl.didChangeSegmentedControlValue), forControlEvents: .ValueChanged)
     }
     
     required init?(coder aDecoder: NSCoder) {
