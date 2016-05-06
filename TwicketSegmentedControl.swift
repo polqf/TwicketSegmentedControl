@@ -16,40 +16,42 @@ class TwicketSegmentedControl: UIView {
     static let height: CGFloat = 44
     weak var delegate: TwicketSegmentedControlDelegate?
     var selectedIndex: Int {
-        get {
-            return segmentedControl.selectedSegmentIndex
-        }
-        set {
-            segmentedControl.selectedSegmentIndex = newValue
-        }
+        get { return segmentedControl.selectedSegmentIndex }
+        set { segmentedControl.selectedSegmentIndex = newValue }
     }
-    var items: [String] = []
-    
     lazy var segmentedControl: UISegmentedControl = {
-        let control = UISegmentedControl(items: self.items)
-        control.frameWidth = self.frameWidth - Margin.m20
-        control.centerX = self.frameWidth/2
-        control.centerY = TwicketSegmentedControl.height/2
+        let control = UISegmentedControl()
+        control.frame = CGRectInset(self.bounds, Margin.m20, Margin.m8 - Margin.m1)
+        control.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         control.tintColor = UIColor.whiteColor()
         return control
     }()
     
-    init(width: CGFloat, items: [String], delegate: TwicketSegmentedControlDelegate, initialIndex: Int = 0) {
+    init(width: CGFloat) {
         super.init(frame: CGRect(x: 0, y: 0, width: width, height: TwicketSegmentedControl.height))
-        self.items = items
-        addSubview(segmentedControl)
-        backgroundColor = Color.mainBlueBackgroundColor
-        self.delegate = delegate
-        selectedIndex = initialIndex
-        segmentedControl.selectedSegmentIndex = selectedIndex
-        segmentedControl.addTarget(self, action: #selector(TwicketSegmentedControl.didChangeSegmentedControlValue), forControlEvents: .ValueChanged)
+        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        setup()
     }
     
-    func didChangeSegmentedControlValue() {
+    func setSegmentedControlItems(items: [String]) {
+        segmentedControl.removeAllSegments()
+        for (index, title) in items.enumerate() {
+            segmentedControl.insertSegmentWithTitle(title, atIndex: index, animated: true)
+        }
+    }
+    
+    private func setup() {
+        addSubview(segmentedControl)
+        backgroundColor = Color.mainBlueBackgroundColor
+        selectedIndex = 1
+        segmentedControl.addTarget(self, action: #selector(didChangeSegmentedControlValue), forControlEvents: .ValueChanged)
+    }
+    
+    dynamic private func didChangeSegmentedControlValue() {
         delegate?.didSelectSegmentIndex(segmentedControl.selectedSegmentIndex)
     }
 }
