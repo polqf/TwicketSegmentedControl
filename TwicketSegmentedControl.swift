@@ -27,9 +27,11 @@ class TwicketSegmentedControl: UIView {
         return control
     }()
     
-    init(width: CGFloat) {
+    init(width: CGFloat, items: [String] = [], selectedIndex: Int = 0) {
         super.init(frame: CGRect(x: 0, y: 0, width: width, height: TwicketSegmentedControl.height))
         setup()
+        setSegmentedControlItems(items)
+        self.selectedIndex = selectedIndex
     }
     
     required init?(coder aDecoder: NSCoder) {
