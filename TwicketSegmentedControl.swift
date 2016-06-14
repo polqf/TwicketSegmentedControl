@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TwicketSegmentedControlDelegate: class {
-    func didSelectSegmentIndex(segmentIndex: Int)
+    func didSelect(index segmentIndex: Int)
 }
 
 class TwicketSegmentedControl: UIView {
@@ -21,9 +21,9 @@ class TwicketSegmentedControl: UIView {
     }
     lazy var segmentedControl: UISegmentedControl = {
         let control = UISegmentedControl()
-        control.frame = CGRectInset(self.bounds, Margin.m20, Margin.m8 - Margin.m1)
-        control.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        control.tintColor = UIColor.whiteColor()
+        control.frame = self.bounds.insetBy(dx: Margin.m20, dy: Margin.m8 - Margin.m1)
+        control.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        control.tintColor = UIColor.white()
         return control
     }()
     
@@ -39,10 +39,10 @@ class TwicketSegmentedControl: UIView {
         setup()
     }
     
-    func setSegmentedControlItems(items: [String]) {
+    func setSegmentedControlItems(_ items: [String]) {
         segmentedControl.removeAllSegments()
-        for (index, title) in items.enumerate() {
-            segmentedControl.insertSegmentWithTitle(title, atIndex: index, animated: true)
+        for (index, title) in items.enumerated() {
+            segmentedControl.insertSegment(withTitle: title, at: index, animated: true)
         }
     }
     
@@ -50,10 +50,10 @@ class TwicketSegmentedControl: UIView {
         addSubview(segmentedControl)
         backgroundColor = Color.mainBlueBackgroundColor
         selectedIndex = 1
-        segmentedControl.addTarget(self, action: #selector(didChangeSegmentedControlValue), forControlEvents: .ValueChanged)
+        segmentedControl.addTarget(self, action: #selector(didChangeSegmentedControlValue), for: .valueChanged)
     }
     
     dynamic private func didChangeSegmentedControlValue() {
-        delegate?.didSelectSegmentIndex(segmentedControl.selectedSegmentIndex)
+        delegate?.didSelect(index: segmentedControl.selectedSegmentIndex)
     }
 }
