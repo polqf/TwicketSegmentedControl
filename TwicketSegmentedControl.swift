@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TwicketSegmentedControlDelegate: class {
-    func didSelectSegmentIndex(segmentIndex: Int)
+    func didSelect(index segmentIndex: Int)
 }
 
 class TwicketSegmentedControl: UIView {
@@ -54,6 +54,6 @@ class TwicketSegmentedControl: UIView {
     }
     
     dynamic private func didChangeSegmentedControlValue() {
-        delegate?.didSelectSegmentIndex(segmentedControl.selectedSegmentIndex)
+        delegate?.didSelect(index: segmentedControl.selectedSegmentIndex)
     }
 }
