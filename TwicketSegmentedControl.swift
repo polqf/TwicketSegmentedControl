@@ -15,18 +15,14 @@ protocol TwicketSegmentedControlDelegate: class {
 class TwicketSegmentedControl: UIView {
     static let height: CGFloat = 44
     weak var delegate: TwicketSegmentedControlDelegate?
+
     var selectedIndex: Int {
         get { return segmentedControl.selectedSegmentIndex }
         set { segmentedControl.selectedSegmentIndex = newValue }
     }
-    lazy var segmentedControl: UISegmentedControl = {
-        let control = UISegmentedControl()
-        control.frame = self.bounds.insetBy(dx: Margin.m20, dy: Margin.m8 - Margin.m1)
-        control.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        control.tintColor = UIColor.white()
-        return control
-    }()
-    
+
+    lazy var segmentedControl: UISegmentedControl = UISegmentedControl()
+
     init(width: CGFloat, items: [String] = [], selectedIndex: Int = 0) {
         super.init(frame: CGRect(x: 0, y: 0, width: width, height: TwicketSegmentedControl.height))
         setup()
@@ -48,11 +44,23 @@ class TwicketSegmentedControl: UIView {
     
     private func setup() {
         addSubview(segmentedControl)
-        backgroundColor = Color.mainBlueBackgroundColor
+        backgroundColor = Color.appGray
+        setupSegmentedControl()
         selectedIndex = 1
         segmentedControl.addTarget(self, action: #selector(didChangeSegmentedControlValue), for: .valueChanged)
     }
-    
+
+    private func setupSegmentedControl() {
+        segmentedControl.frame = bounds.insetBy(dx: Margin.m20, dy: Margin.m8 - Margin.m1)
+        segmentedControl.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        segmentedControl.tintColor = Color.appDarkGray
+        segmentedControl.setDividerImage(UIImage(), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
+        segmentedControl.setTitleTextAttributes([
+            NSFontAttributeName : Font.appMedium(15),
+            NSForegroundColorAttributeName : Color.appDarkGray
+            ], for: .normal)
+    }
+
     dynamic private func didChangeSegmentedControlValue() {
         delegate?.didSelect(index: segmentedControl.selectedSegmentIndex)
     }
