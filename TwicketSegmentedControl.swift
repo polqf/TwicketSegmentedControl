@@ -44,7 +44,7 @@ class TwicketSegmentedControl: UIView {
     
     private func setup() {
         addSubview(segmentedControl)
-        backgroundColor = Color.appGray
+        backgroundColor = Color.appPrimaryColor
         setupSegmentedControl()
         selectedIndex = 1
         segmentedControl.addTarget(self, action: #selector(didChangeSegmentedControlValue), for: .valueChanged)
