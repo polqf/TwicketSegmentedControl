@@ -42,7 +42,7 @@ class TwicketSegmentedControl: UIView {
         }
     }
     
-    private func setup() {
+    fileprivate func setup() {
         addSubview(segmentedControl)
         backgroundColor = Color.appPrimaryColor
         setupSegmentedControl()
@@ -50,7 +50,7 @@ class TwicketSegmentedControl: UIView {
         segmentedControl.addTarget(self, action: #selector(didChangeSegmentedControlValue), for: .valueChanged)
     }
 
-    private func setupSegmentedControl() {
+    fileprivate func setupSegmentedControl() {
         segmentedControl.frame = bounds.insetBy(dx: Margin.m20, dy: Margin.m8 - Margin.m1)
         segmentedControl.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         segmentedControl.tintColor = Color.appDarkGray
@@ -61,7 +61,7 @@ class TwicketSegmentedControl: UIView {
             ], for: .normal)
     }
 
-    dynamic private func didChangeSegmentedControlValue() {
+    dynamic fileprivate func didChangeSegmentedControlValue() {
         delegate?.didSelect(index: segmentedControl.selectedSegmentIndex)
     }
 }
