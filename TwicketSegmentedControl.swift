@@ -149,6 +149,8 @@ open class TwicketSegmentedControl: UIControl {
             backgroundView.addSubview(baseLabel)
             selectedContainerView.addSubview(selectedLabel)
         }
+
+        setupAutoresizingMasks()
     }
 
     fileprivate func configureViews() {
@@ -173,6 +175,13 @@ open class TwicketSegmentedControl: UIControl {
         selectedContainerView.addShadow(with: sliderBackgroundColor)
     }
 
+    fileprivate func setupAutoresizingMasks() {
+        containerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        backgroundView.autoresizingMask = [.flexibleWidth]
+        selectedContainerView.autoresizingMask = [.flexibleWidth]
+        sliderView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleWidth]
+    }
+
     // MARK: Labels
 
     fileprivate func clearLabels() {
@@ -187,6 +196,7 @@ open class TwicketSegmentedControl: UIControl {
         label.textAlignment = .center
         label.textColor = selected ? highlightTextColor : defaultTextColor
         label.font = font
+        label.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleWidth]
         return label
     }
 
