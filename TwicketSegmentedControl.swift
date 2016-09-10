@@ -93,11 +93,7 @@ open class TwicketSegmentedControl: UIControl {
         }
     }
 
-    open var selectedSegmentIndex: Int = 0 {
-        didSet {
-            move(to: selectedSegmentIndex)
-        }
-    }
+    private(set) open var selectedSegmentIndex: Int = 0
 
     fileprivate var segments: [String] = []
 
@@ -113,7 +109,7 @@ open class TwicketSegmentedControl: UIControl {
 
     fileprivate lazy var containerView: UIView = UIView()
     fileprivate lazy var backgroundView: UIView = UIView()
-    fileprivate lazy var selectedContainerView: UIView = UIView(frame: .zero)
+    fileprivate lazy var selectedContainerView: UIView = UIView()
     fileprivate lazy var sliderView: SliderView = SliderView()
 
     public override init(frame: CGRect) {
