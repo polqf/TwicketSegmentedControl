@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TwicketSegmentedControlDelegate: class {
-    func didSelect(index segmentIndex: Int)
+    func didSelect(_ segmentIndex: Int)
 }
 
 open class TwicketSegmentedControl: UIControl {
@@ -93,7 +93,11 @@ open class TwicketSegmentedControl: UIControl {
         }
     }
 
-    open var selectedSegmentIndex: Int = 0
+    open var selectedSegmentIndex: Int = 0 {
+        didSet {
+            move(to: selectedSegmentIndex)
+        }
+    }
 
     fileprivate var segments: [String] = []
 
@@ -166,6 +170,7 @@ open class TwicketSegmentedControl: UIControl {
         [backgroundView, selectedContainerView].forEach { $0.layer.cornerRadius = cornerRadius }
         sliderView.cornerRadius = cornerRadius
 
+        backgroundColor = Color.appPureWhite
         backgroundView.backgroundColor = segmentsBackgroundColor
         selectedContainerView.backgroundColor = sliderBackgroundColor
 
@@ -234,13 +239,13 @@ open class TwicketSegmentedControl: UIControl {
         let location = gesture.location(in: self)
         let index = segmentIndex(for: location)
         move(to: index)
+        delegate?.didSelect(index)
     }
 
     open func move(to index: Int) {
         let correctOffset = center(at: index)
         animate(to: correctOffset)
 
-        delegate?.didSelect(index: index)
         selectedSegmentIndex = index
     }
 
