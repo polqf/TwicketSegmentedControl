@@ -154,12 +154,11 @@ open class TwicketSegmentedControl: UIControl {
     }
 
     fileprivate func configureViews() {
-        containerView.frame = bounds
-        let insets = UIEdgeInsets(top: Constants.topBottomMargin,
-                                  left: Constants.leadingTrailingMargin,
-                                  bottom: Constants.topBottomMargin,
-                                  right: Constants.leadingTrailingMargin)
-        let frame = UIEdgeInsetsInsetRect(bounds, insets)
+        containerView.frame = CGRect(x: Constants.leadingTrailingMargin,
+                                     y: Constants.topBottomMargin,
+                                     width: bounds.width - Constants.leadingTrailingMargin * 2,
+                                     height: Constants.height)
+        let frame = containerView.bounds
         backgroundView.frame = frame
         selectedContainerView.frame = frame
         sliderView.frame = CGRect(x: 0, y: 0, width: segmentWidth, height: backgroundView.frame.height)
@@ -176,7 +175,7 @@ open class TwicketSegmentedControl: UIControl {
     }
 
     fileprivate func setupAutoresizingMasks() {
-        containerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        containerView.autoresizingMask = [.flexibleWidth]
         backgroundView.autoresizingMask = [.flexibleWidth]
         selectedContainerView.autoresizingMask = [.flexibleWidth]
         sliderView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleWidth]
