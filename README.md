@@ -4,7 +4,7 @@
 ![](https://img.shields.io/badge/Swift-3.0-blue.svg?style=flat)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-Customized segmented control used in the Twicket app.
+Custom UISegmentedControl replacement for iOS, written in Swift, used in the Twicket app.
 
 ###Features:
 
