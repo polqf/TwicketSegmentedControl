@@ -1,6 +1,6 @@
 //
 //  TwicketSegmentedControl.swift
-//  Twicket
+//  TwicketSegmentedControlDemo
 //
 //  Created by Pol Quintana on 7/11/15.
 //  Copyright © 2015 Pol Quintana. All rights reserved.
@@ -63,25 +63,25 @@ open class TwicketSegmentedControl: UIControl {
 
     weak var delegate: TwicketSegmentedControlDelegate?
 
-    open var defaultTextColor: UIColor = Color.appDarkGray40 {
+    open var defaultTextColor: UIColor = Palette.defaultTextColor {
         didSet {
             updateLabelsColor(with: defaultTextColor, selected: false)
         }
     }
 
-    open var highlightTextColor: UIColor = .white {
+    open var highlightTextColor: UIColor = Palette.highlightTextColor {
         didSet {
             updateLabelsColor(with: highlightTextColor, selected: true)
         }
     }
 
-    open var segmentsBackgroundColor: UIColor = Color.appGray70 {
+    open var segmentsBackgroundColor: UIColor = Palette.segmentedControlBackgroundColor {
         didSet {
             backgroundView.backgroundColor = backgroundColor
         }
     }
 
-    open var sliderBackgroundColor: UIColor = Color.appSecondaryColor {
+    open var sliderBackgroundColor: UIColor = Palette.sliderColor {
         didSet {
             selectedContainerView.backgroundColor = sliderBackgroundColor
         }
@@ -167,7 +167,7 @@ open class TwicketSegmentedControl: UIControl {
         [backgroundView, selectedContainerView].forEach { $0.layer.cornerRadius = cornerRadius }
         sliderView.cornerRadius = cornerRadius
 
-        backgroundColor = Color.appPureWhite
+        backgroundColor = .white
         backgroundView.backgroundColor = segmentsBackgroundColor
         selectedContainerView.backgroundColor = sliderBackgroundColor
 
@@ -228,7 +228,7 @@ open class TwicketSegmentedControl: UIControl {
     @objc fileprivate func didPan(panGesture: UIPanGestureRecognizer) {
         switch panGesture.state {
         case .cancelled, .ended, .failed:
-            moveToNearestPoint(basedOn: panGesture)
+            moveToNearestPoint(basedOn: panGesture, velocity: panGesture.velocity(in: sliderView))
         case .began:
             correction = panGesture.location(in: sliderView).x - sliderView.frame.width/2
         case .changed:
@@ -240,8 +240,13 @@ open class TwicketSegmentedControl: UIControl {
 
     // MARK: Slider position
 
-    fileprivate func moveToNearestPoint(basedOn gesture: UIGestureRecognizer) {
-        let location = gesture.location(in: self)
+    fileprivate func moveToNearestPoint(basedOn gesture: UIGestureRecognizer, velocity: CGPoint? = nil) {
+        var location = gesture.location(in: self)
+        if let velocity = velocity {
+            let offset = velocity.x / sliderView.frame.width
+            print("Velocity \(velocity) - Offset \(offset)")
+            location.x += offset
+        }
         let index = segmentIndex(for: location)
         move(to: index)
         delegate?.didSelect(index)
@@ -263,19 +268,10 @@ open class TwicketSegmentedControl: UIControl {
         let xOffset = CGFloat(index) * sliderView.frame.width + sliderView.frame.width / 2
         return xOffset
     }
-    
+
     fileprivate func animate(to position: CGFloat) {
         UIView.animate(withDuration: 0.2) {
             self.sliderView.center.x = position
         }
-    }
-}
-
-fileprivate extension UIView {
-    func addShadow(with color: UIColor) {
-        layer.shadowColor = color.cgColor
-        layer.shadowRadius = 8
-        layer.shadowOpacity = 0.7
-        layer.shadowOffset = CGSize(width: 0, height: 5)
     }
 }

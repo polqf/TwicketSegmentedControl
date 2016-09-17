@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "48DC8C530374CB047E39DF11A0475F9414572B86",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0B1AF10398ECE7F5F3CBFCF9AA305B09063FE214" : 9223372036854775807,
+    "48DC8C530374CB047E39DF11A0475F9414572B86" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EEC6D649-7703-404B-98D2-01A22002354B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0B1AF10398ECE7F5F3CBFCF9AA305B09063FE214" : "..",
+    "48DC8C530374CB047E39DF11A0475F9414572B86" : "TwicketSegmentedControl\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TwicketSegmentedControlDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TwicketSegmentedControlDemo\/TwicketSegmentedControlDemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:poolqf\/Twicket",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0B1AF10398ECE7F5F3CBFCF9AA305B09063FE214"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:poolqf\/TwicketSegmentedControl.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "48DC8C530374CB047E39DF11A0475F9414572B86"
+    }
+  ]
+}
