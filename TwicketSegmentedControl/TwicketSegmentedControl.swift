@@ -13,9 +13,9 @@ protocol TwicketSegmentedControlDelegate: class {
 }
 
 open class TwicketSegmentedControl: UIControl {
-    static let height: CGFloat = Constants.height + Constants.topBottomMargin * 2
+    open static let height: CGFloat = Constants.height + Constants.topBottomMargin * 2
 
-    struct Constants {
+    fileprivate struct Constants {
         static let height: CGFloat = 30
         static let topBottomMargin: CGFloat = 5
         static let leadingTrailingMargin: CGFloat = 10
@@ -135,7 +135,7 @@ open class TwicketSegmentedControl: UIControl {
         addDragGesture()
     }
 
-    public func setSegmentItems(_ segments: [String]) {
+    open func setSegmentItems(_ segments: [String]) {
         guard !segments.isEmpty else { fatalError("Segments array cannot be empty") }
 
         self.segments = segments
