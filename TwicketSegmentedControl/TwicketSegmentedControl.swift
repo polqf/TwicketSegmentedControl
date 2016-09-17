@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TwicketSegmentedControlDelegate: class {
+public protocol TwicketSegmentedControlDelegate: class {
     func didSelect(_ segmentIndex: Int)
 }
 
@@ -61,7 +61,7 @@ open class TwicketSegmentedControl: UIControl {
         }
     }
 
-    weak var delegate: TwicketSegmentedControlDelegate?
+    open weak var delegate: TwicketSegmentedControlDelegate?
 
     open var defaultTextColor: UIColor = Palette.defaultTextColor {
         didSet {
