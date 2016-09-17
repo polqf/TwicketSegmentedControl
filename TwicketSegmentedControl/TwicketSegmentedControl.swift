@@ -243,8 +243,7 @@ open class TwicketSegmentedControl: UIControl {
     fileprivate func moveToNearestPoint(basedOn gesture: UIGestureRecognizer, velocity: CGPoint? = nil) {
         var location = gesture.location(in: self)
         if let velocity = velocity {
-            let offset = velocity.x / sliderView.frame.width
-            print("Velocity \(velocity) - Offset \(offset)")
+            let offset = velocity.x / 12
             location.x += offset
         }
         let index = segmentIndex(for: location)
@@ -260,8 +259,10 @@ open class TwicketSegmentedControl: UIControl {
     }
 
     fileprivate func segmentIndex(for point: CGPoint) -> Int {
-        let index = Int(point.x / sliderView.frame.width)
-        return index > numberOfSegments - 1 ? numberOfSegments - 1 : index
+        var index = Int(point.x / sliderView.frame.width)
+        if index < 0 { index = 0 }
+        if index > numberOfSegments - 1 { index = numberOfSegments - 1 }
+        return index
     }
 
     fileprivate func center(at index: Int) -> CGFloat {
