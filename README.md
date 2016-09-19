@@ -65,8 +65,8 @@ pod 'TwicketSegmentedControl'
 ####• Carthage
 
 ```
-github "poolqf/FillableLoaders"
+github "poolqf/TwicketSegmentedControl"
 ```
 ####• Manually
 
-To manually add `FillableLoaders` to your project you just need to copy the `Source` folder files.
+To manually add `TwicketSegmentedControl` to your project you just need to copy the `Source` folder files.
