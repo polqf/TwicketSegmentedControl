@@ -16,7 +16,7 @@ It handles the inertia of the movement, so you can “throw” the selector from
 
 ###Features:
 
-- Drag gesture
+- Drag & Tap gesture
 - Movement animation
 - IB compatible
 - Customizable colors
