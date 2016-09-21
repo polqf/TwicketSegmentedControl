@@ -4,7 +4,13 @@
 ![](https://img.shields.io/badge/Swift-3.0-blue.svg?style=flat)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
+<p align=center><img src="http://twicketapp.github.io/Images/segmented-control-detail.jpg" height="300px"/></p>
+
 Custom UISegmentedControl replacement for iOS, written in Swift, used in the Twicket app.
+
+It handles the inertia of the movement, so you can “throw” the selector from one side to the other.
+
+**Take a look at the design by @dsaltaren on [Dribbble](https://dribbble.com/shots/2976216-Twicket-Segmented-Control)**
 
 ###Features:
 
