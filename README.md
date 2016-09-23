@@ -28,8 +28,8 @@ You can either create it using Interface Builder, or by code.
 Whenever the segmented control is instantiated, you'll have to tell it which are going to be the segments it will have:
 
 ```swift
-	let titles = ["First", "Second", "Third"]
-	segmentedControl.setSegmentItems(titles)
+let titles = ["First", "Second", "Third"]
+segmentedControl.setSegmentItems(titles)
 
 ```
 Every time you use this function, the control is redrawn.
@@ -37,14 +37,14 @@ Every time you use this function, the control is redrawn.
 If you want to manually move to an index:
 
 ```swift
-	segmentedControl.move(to: 2)
+segmentedControl.move(to: 2)
 ```
 Keep in mind that the first segment index is `0`
 
 To listen to changes on the selected index you have a delegate with the following interface:
 
 ```swift
-    func didSelect(_ segmentIndex: Int)
+func didSelect(_ segmentIndex: Int)
 ```
 
 One last thing to mention, even if you set a different outer frame, its contentView height will always be `40`.
@@ -65,7 +65,7 @@ __highlightTextColor__: UIColor - Background color for selected segment
 ###Installation:
 ####• CocoaPods
 
-```
+```ruby
 use_frameworks!
 
 pod 'TwicketSegmentedControl'
