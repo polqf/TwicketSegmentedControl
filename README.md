@@ -44,7 +44,7 @@ Keep in mind that the first segment index is `0`
 To listen to changes on the selected index you have a delegate with the following interface:
 
 ```swift
-    func didSelect(_ segmentIndex: Int)
+        func didSelect(_ segmentIndex: Int)
 ```
 
 One last thing to mention, even if you set a different outer frame, its contentView height will always be `40`.
