@@ -19,13 +19,14 @@ class ViewController: UIViewController {
 
         let segmentedControl = TwicketSegmentedControl(frame: frame)
         segmentedControl.setSegmentItems(titles)
+        segmentedControl.delegate = self
 
         view.addSubview(segmentedControl)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }
 
+extension ViewController: TwicketSegmentedControlDelegate {
+    func didSelect(_ segmentIndex: Int) {
+        print("Selected idex: \(segmentIndex)")
+    }
+}
