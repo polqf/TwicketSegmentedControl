@@ -30,7 +30,6 @@ Whenever the segmented control is instantiated, you'll have to tell it which are
 ```swift
 	let titles = ["First", "Second", "Third"]
 	segmentedControl.setSegmentItems(titles)
-
 ```
 Every time you use this function, the control is redrawn.
 
@@ -41,10 +40,16 @@ If you want to manually move to an index:
 ```
 Keep in mind that the first segment index is `0`
 
-To listen to changes on the selected index you have a delegate with the following interface:
+To listen to changes on the selected index you just need to set yourself as delegate:
 
 ```swift
-        func didSelect(_ segmentIndex: Int)
+	segmentedControl.delegate = self
+```
+
+And you'll get notified with the following interface:
+
+```swift
+	func didSelect(_ segmentIndex: Int)
 ```
 
 One last thing to mention, even if you set a different outer frame, its contentView height will always be `40`.
