@@ -78,7 +78,7 @@ pod 'TwicketSegmentedControl'
 ####• Carthage
 
 ```
-github "poolqf/TwicketSegmentedControl"
+github "twicketapp/TwicketSegmentedControl"
 ```
 ####• Manually
 
