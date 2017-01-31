@@ -27,6 +27,6 @@ class ViewController: UIViewController {
 
 extension ViewController: TwicketSegmentedControlDelegate {
     func didSelect(_ segmentIndex: Int) {
-        print("Selected idex: \(segmentIndex)")
+        print("Selected index: \(segmentIndex)")
     }
 }
