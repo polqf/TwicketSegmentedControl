@@ -15,7 +15,7 @@ public protocol TwicketSegmentedControlDelegate: class {
 open class TwicketSegmentedControl: UIControl {
     open static let height: CGFloat = Constants.height + Constants.topBottomMargin * 2
 
-    fileprivate struct Constants {
+    private struct Constants {
         static let height: CGFloat = 30
         static let topBottomMargin: CGFloat = 5
         static let leadingTrailingMargin: CGFloat = 10
@@ -84,7 +84,7 @@ open class TwicketSegmentedControl: UIControl {
     open var sliderBackgroundColor: UIColor = Palette.sliderColor {
         didSet {
             selectedContainerView.backgroundColor = sliderBackgroundColor
-            selectedContainerView.addShadow(with: sliderBackgroundColor)
+            if !isSliderShadowHidden { selectedContainerView.addShadow(with: sliderBackgroundColor) }
         }
     }
 
@@ -94,24 +94,30 @@ open class TwicketSegmentedControl: UIControl {
         }
     }
 
+    open var isSliderShadowHidden: Bool = false {
+        didSet {
+            updateShadow(with: sliderBackgroundColor, hidden: isSliderShadowHidden)
+        }
+    }
+
     private(set) open var selectedSegmentIndex: Int = 0
 
-    fileprivate var segments: [String] = []
+    private var segments: [String] = []
 
-    fileprivate var numberOfSegments: Int {
+    private var numberOfSegments: Int {
         return segments.count
     }
 
-    fileprivate var segmentWidth: CGFloat {
+    private var segmentWidth: CGFloat {
         return self.backgroundView.frame.width / CGFloat(numberOfSegments)
     }
 
-    fileprivate var correction: CGFloat = 0
+    private var correction: CGFloat = 0
 
-    fileprivate lazy var containerView: UIView = UIView()
-    fileprivate lazy var backgroundView: UIView = UIView()
-    fileprivate lazy var selectedContainerView: UIView = UIView()
-    fileprivate lazy var sliderView: SliderView = SliderView()
+    private lazy var containerView: UIView = UIView()
+    private lazy var backgroundView: UIView = UIView()
+    private lazy var selectedContainerView: UIView = UIView()
+    private lazy var sliderView: SliderView = SliderView()
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -125,7 +131,7 @@ open class TwicketSegmentedControl: UIControl {
 
     // MARK: Setup
 
-    fileprivate func setup() {
+    private func setup() {
         addSubview(containerView)
         containerView.addSubview(backgroundView)
         containerView.addSubview(selectedContainerView)
@@ -154,7 +160,7 @@ open class TwicketSegmentedControl: UIControl {
         setupAutoresizingMasks()
     }
 
-    fileprivate func configureViews() {
+    private func configureViews() {
         containerView.frame = CGRect(x: Constants.leadingTrailingMargin,
                                      y: Constants.topBottomMargin,
                                      width: bounds.width - Constants.leadingTrailingMargin * 2,
@@ -172,24 +178,36 @@ open class TwicketSegmentedControl: UIControl {
         backgroundView.backgroundColor = segmentsBackgroundColor
         selectedContainerView.backgroundColor = sliderBackgroundColor
 
-        selectedContainerView.addShadow(with: sliderBackgroundColor)
+        if !isSliderShadowHidden {
+            selectedContainerView.addShadow(with: sliderBackgroundColor)
+        }
     }
 
-    fileprivate func setupAutoresizingMasks() {
+    private func setupAutoresizingMasks() {
         containerView.autoresizingMask = [.flexibleWidth]
         backgroundView.autoresizingMask = [.flexibleWidth]
         selectedContainerView.autoresizingMask = [.flexibleWidth]
         sliderView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleWidth]
     }
 
+    private func updateShadow(with color: UIColor, hidden: Bool) {
+        if hidden {
+            selectedContainerView.removeShadow()
+            sliderView.sliderMaskView.removeShadow()
+        } else {
+            selectedContainerView.addShadow(with: sliderBackgroundColor)
+            sliderView.sliderMaskView.addShadow(with: .black)
+        }
+    }
+
     // MARK: Labels
 
-    fileprivate func clearLabels() {
+    private func clearLabels() {
         backgroundView.subviews.forEach { $0.removeFromSuperview() }
         selectedContainerView.subviews.forEach { $0.removeFromSuperview() }
     }
 
-    fileprivate func createLabel(with text: String, at index: Int, selected: Bool) -> UILabel {
+    private func createLabel(with text: String, at index: Int, selected: Bool) -> UILabel {
         let rect = CGRect(x: CGFloat(index) * segmentWidth, y: 0, width: segmentWidth, height: backgroundView.frame.height)
         let label = UILabel(frame: rect)
         label.text = text
@@ -200,33 +218,33 @@ open class TwicketSegmentedControl: UIControl {
         return label
     }
 
-    fileprivate func updateLabelsColor(with color: UIColor, selected: Bool) {
+    private func updateLabelsColor(with color: UIColor, selected: Bool) {
         let containerView = selected ? selectedContainerView : backgroundView
         containerView.subviews.forEach { ($0 as? UILabel)?.textColor = color }
     }
 
-    fileprivate func updateLabelsFont(with font: UIFont) {
+    private func updateLabelsFont(with font: UIFont) {
         selectedContainerView.subviews.forEach { ($0 as? UILabel)?.font = font }
         backgroundView.subviews.forEach { ($0 as? UILabel)?.font = font }
     }
 
     // MARK: Tap gestures
 
-    fileprivate func addTapGesture() {
+    private func addTapGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTap))
         addGestureRecognizer(tap)
     }
 
-    fileprivate func addDragGesture() {
+    private func addDragGesture() {
         let drag = UIPanGestureRecognizer(target: self, action: #selector(didPan))
         sliderView.addGestureRecognizer(drag)
     }
 
-    @objc fileprivate func didTap(tapGesture: UITapGestureRecognizer) {
+    @objc private func didTap(tapGesture: UITapGestureRecognizer) {
         moveToNearestPoint(basedOn: tapGesture)
     }
 
-    @objc fileprivate func didPan(panGesture: UIPanGestureRecognizer) {
+    @objc private func didPan(panGesture: UIPanGestureRecognizer) {
         switch panGesture.state {
         case .cancelled, .ended, .failed:
             moveToNearestPoint(basedOn: panGesture, velocity: panGesture.velocity(in: sliderView))
@@ -241,7 +259,7 @@ open class TwicketSegmentedControl: UIControl {
 
     // MARK: Slider position
 
-    fileprivate func moveToNearestPoint(basedOn gesture: UIGestureRecognizer, velocity: CGPoint? = nil) {
+    private func moveToNearestPoint(basedOn gesture: UIGestureRecognizer, velocity: CGPoint? = nil) {
         var location = gesture.location(in: self)
         if let velocity = velocity {
             let offset = velocity.x / 12
@@ -259,19 +277,19 @@ open class TwicketSegmentedControl: UIControl {
         selectedSegmentIndex = index
     }
 
-    fileprivate func segmentIndex(for point: CGPoint) -> Int {
+    private func segmentIndex(for point: CGPoint) -> Int {
         var index = Int(point.x / sliderView.frame.width)
         if index < 0 { index = 0 }
         if index > numberOfSegments - 1 { index = numberOfSegments - 1 }
         return index
     }
 
-    fileprivate func center(at index: Int) -> CGFloat {
+    private func center(at index: Int) -> CGFloat {
         let xOffset = CGFloat(index) * sliderView.frame.width + sliderView.frame.width / 2
         return xOffset
     }
 
-    fileprivate func animate(to position: CGFloat) {
+    private func animate(to position: CGFloat) {
         UIView.animate(withDuration: 0.2) {
             self.sliderView.center.x = position
         }
