@@ -65,7 +65,7 @@ __highlightTextColor__: UIColor - Text color for selected segment
 
 __segmentsBackgroundColor__: UIColor - Background color for unselected segments
 
-__highlightTextColor__: UIColor - Background color for selected segment
+__sliderBackgroundColor__: UIColor - Background color for selected segment
 
 ###Installation:
 ####• CocoaPods

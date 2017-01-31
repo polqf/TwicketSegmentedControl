@@ -77,13 +77,14 @@ open class TwicketSegmentedControl: UIControl {
 
     open var segmentsBackgroundColor: UIColor = Palette.segmentedControlBackgroundColor {
         didSet {
-            backgroundView.backgroundColor = backgroundColor
+            backgroundView.backgroundColor = segmentsBackgroundColor
         }
     }
 
     open var sliderBackgroundColor: UIColor = Palette.sliderColor {
         didSet {
             selectedContainerView.backgroundColor = sliderBackgroundColor
+            selectedContainerView.addShadow(with: sliderBackgroundColor)
         }
     }
 
