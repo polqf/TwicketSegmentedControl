@@ -67,6 +67,8 @@ __segmentsBackgroundColor__: UIColor - Background color for unselected segments
 
 __sliderBackgroundColor__: UIColor - Background color for selected segment
 
+__isSliderShadowHidden__: Bool - Boolean to decide if the slider should have shadow
+
 ###Installation:
 ####• CocoaPods
 
