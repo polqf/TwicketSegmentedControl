@@ -14,7 +14,7 @@ It handles the inertia of the movement, so you can “throw” the selector from
 
 **Take a look at the design by @dsaltaren on [Dribbble](https://dribbble.com/shots/2976216-Twicket-Segmented-Control)**
 
-###Features:
+### Features:
 
 - Drag and Tap gesture
 - Movement animation
@@ -22,7 +22,7 @@ It handles the inertia of the movement, so you can “throw” the selector from
 - Customizable colors
 
 
-###How to use it:
+### How to use it:
 You can either create it using Interface Builder, or by code. 
 
 Whenever the segmented control is instantiated, you'll have to tell it which are going to be the segments it will have:
@@ -69,19 +69,19 @@ __sliderBackgroundColor__: UIColor - Background color for selected segment
 
 __isSliderShadowHidden__: Bool - Boolean to decide if the slider should have shadow
 
-###Installation:
-####• CocoaPods
+### Installation:
+#### • CocoaPods
 
 ```
 use_frameworks!
 
 pod 'TwicketSegmentedControl'
 ```
-####• Carthage
+#### • Carthage
 
 ```
 github "twicketapp/TwicketSegmentedControl"
 ```
-####• Manually
+#### • Manually
 
 To manually add `TwicketSegmentedControl` to your project you just need to copy the `Source` folder files.
