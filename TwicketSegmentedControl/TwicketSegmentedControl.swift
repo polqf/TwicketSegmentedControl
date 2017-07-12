@@ -13,14 +13,6 @@ public protocol TwicketSegmentedControlDelegate: class {
 }
 
 open class TwicketSegmentedControl: UIControl {
-    open static let height: CGFloat = Constants.height + Constants.topBottomMargin * 2
-
-    private struct Constants {
-        static let height: CGFloat = 30
-        static let topBottomMargin: CGFloat = 5
-        static let leadingTrailingMargin: CGFloat = 10
-    }
-
     class SliderView: UIView {
         // MARK: - Properties
         fileprivate let sliderMaskView = UIView()
@@ -161,10 +153,7 @@ open class TwicketSegmentedControl: UIControl {
     }
 
     private func configureViews() {
-        containerView.frame = CGRect(x: Constants.leadingTrailingMargin,
-                                     y: Constants.topBottomMargin,
-                                     width: bounds.width - Constants.leadingTrailingMargin * 2,
-                                     height: Constants.height)
+        containerView.frame = self.bounds
         let frame = containerView.bounds
         backgroundView.frame = frame
         selectedContainerView.frame = frame
