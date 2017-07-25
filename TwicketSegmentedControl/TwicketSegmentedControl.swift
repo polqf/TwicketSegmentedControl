@@ -270,10 +270,13 @@ open class TwicketSegmentedControl: UIControl {
         delegate?.didSelect(index)
     }
 
-    open func move(to index: Int) {
+    open func move(to index: Int, animated:Bool? = true) {
         let correctOffset = center(at: index)
-        animate(to: correctOffset)
-
+        if animated == true{
+            animate(to: correctOffset)
+        }else{
+            self.sliderView.center.x = correctOffset
+        }
         selectedSegmentIndex = index
     }
 
