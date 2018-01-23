@@ -9,16 +9,16 @@
 import UIKit
 
 public protocol TwicketSegmentedControlDelegate: class {
-    func didSelect(_ segmentIndex: Int)
+    func didSelect(_ segmentedControl:TwicketSegmentedControl, _ segmentIndex: Int)
 }
 
 open class TwicketSegmentedControl: UIControl {
-    open static let height: CGFloat = Constants.height + Constants.topBottomMargin * 2
+    open static let height: CGFloat = Constants.defaultHeight + Constants.defaultTopBottomMargin * 2
 
     private struct Constants {
-        static let height: CGFloat = 30
-        static let topBottomMargin: CGFloat = 5
-        static let leadingTrailingMargin: CGFloat = 10
+        static let defaultHeight: CGFloat = 30
+        static let defaultTopBottomMargin: CGFloat = 5
+        static let defaultLeadingTrailingMargin: CGFloat = 10
     }
 
     class SliderView: UIView {
@@ -63,40 +63,60 @@ open class TwicketSegmentedControl: UIControl {
 
     open weak var delegate: TwicketSegmentedControlDelegate?
 
-    open var defaultTextColor: UIColor = Palette.defaultTextColor {
+    dynamic open var defaultTextColor: UIColor = Palette.defaultTextColor {
         didSet {
             updateLabelsColor(with: defaultTextColor, selected: false)
         }
     }
 
-    open var highlightTextColor: UIColor = Palette.highlightTextColor {
+    dynamic open var highlightTextColor: UIColor = Palette.highlightTextColor {
         didSet {
             updateLabelsColor(with: highlightTextColor, selected: true)
         }
     }
 
-    open var segmentsBackgroundColor: UIColor = Palette.segmentedControlBackgroundColor {
+    dynamic open var segmentsBackgroundColor: UIColor = Palette.segmentedControlBackgroundColor {
         didSet {
             backgroundView.backgroundColor = segmentsBackgroundColor
         }
     }
 
-    open var sliderBackgroundColor: UIColor = Palette.sliderColor {
+    dynamic open var sliderBackgroundColor: UIColor = Palette.sliderColor {
         didSet {
             selectedContainerView.backgroundColor = sliderBackgroundColor
             if !isSliderShadowHidden { selectedContainerView.addShadow(with: sliderBackgroundColor) }
         }
     }
 
-    open var font: UIFont = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium) {
+    dynamic open var font: UIFont = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium) {
         didSet {
             updateLabelsFont(with: font)
         }
     }
 
-    open var isSliderShadowHidden: Bool = false {
+    dynamic open var isSliderShadowHidden: Bool = false {
         didSet {
             updateShadow(with: sliderBackgroundColor, hidden: isSliderShadowHidden)
+        }
+    }
+    
+    dynamic open var cornerRadius: CGFloat = .greatestFiniteMagnitude {
+        didSet {
+            let cr = cornerRadius == .greatestFiniteMagnitude ? backgroundView.frame.height / 2 : cornerRadius
+            [backgroundView, selectedContainerView].forEach { $0.layer.cornerRadius = cr }
+            sliderView.cornerRadius = cr
+        }
+    }
+    
+    dynamic open var topBottomMargin = Constants.defaultTopBottomMargin {
+        didSet {
+            configureViews()
+        }
+    }
+    
+    dynamic open var leadingTrailingMargin = Constants.defaultLeadingTrailingMargin {
+        didSet {
+            configureViews()
         }
     }
 
@@ -161,18 +181,18 @@ open class TwicketSegmentedControl: UIControl {
     }
 
     private func configureViews() {
-        containerView.frame = CGRect(x: Constants.leadingTrailingMargin,
-                                     y: Constants.topBottomMargin,
-                                     width: bounds.width - Constants.leadingTrailingMargin * 2,
-                                     height: Constants.height)
+        containerView.frame = CGRect(x: leadingTrailingMargin,
+                                     y: topBottomMargin,
+                                     width: bounds.width - leadingTrailingMargin * 2,
+                                     height: Constants.defaultHeight)
         let frame = containerView.bounds
         backgroundView.frame = frame
         selectedContainerView.frame = frame
         sliderView.frame = CGRect(x: 0, y: 0, width: segmentWidth, height: backgroundView.frame.height)
 
-        let cornerRadius = backgroundView.frame.height / 2
-        [backgroundView, selectedContainerView].forEach { $0.layer.cornerRadius = cornerRadius }
-        sliderView.cornerRadius = cornerRadius
+        let cr = cornerRadius == .greatestFiniteMagnitude ? backgroundView.frame.height / 2 : cornerRadius
+        [backgroundView, selectedContainerView].forEach { $0.layer.cornerRadius = cr }
+        sliderView.cornerRadius = cr
 
         backgroundColor = .white
         backgroundView.backgroundColor = segmentsBackgroundColor
@@ -267,7 +287,7 @@ open class TwicketSegmentedControl: UIControl {
         }
         let index = segmentIndex(for: location)
         move(to: index)
-        delegate?.didSelect(index)
+        delegate?.didSelect(self, index)
     }
 
     open func move(to index: Int) {
