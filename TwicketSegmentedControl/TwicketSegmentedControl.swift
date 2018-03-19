@@ -88,7 +88,7 @@ open class TwicketSegmentedControl: UIControl {
         }
     }
 
-    open var font: UIFont = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium) {
+    open var font: UIFont = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium) {
         didSet {
             updateLabelsFont(with: font)
         }
