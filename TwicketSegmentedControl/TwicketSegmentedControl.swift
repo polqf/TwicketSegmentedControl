@@ -275,6 +275,7 @@ open class TwicketSegmentedControl: UIControl {
         animate(to: correctOffset)
 
         selectedSegmentIndex = index
+        self.sendActions(for: .valueChanged)
     }
 
     private func segmentIndex(for point: CGPoint) -> Int {
