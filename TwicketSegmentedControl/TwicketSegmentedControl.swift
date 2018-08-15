@@ -14,7 +14,8 @@ public protocol TwicketSegmentedControlDelegate: class {
 
 open class TwicketSegmentedControl: UIControl {
     open static let height: CGFloat = Constants.height + Constants.topBottomMargin * 2
-
+    public var animationDuration = 0.2
+    
     private struct Constants {
         static let height: CGFloat = 30
         static let topBottomMargin: CGFloat = 5
@@ -291,7 +292,8 @@ open class TwicketSegmentedControl: UIControl {
     }
 
     private func animate(to position: CGFloat) {
-        UIView.animate(withDuration: 0.2) {
+        
+        UIView.animate(withDuration: animationDuration) {
             self.sliderView.center.x = position
         }
     }
