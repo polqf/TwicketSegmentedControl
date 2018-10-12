@@ -13,10 +13,10 @@ public protocol TwicketSegmentedControlDelegate: class {
 }
 
 open class TwicketSegmentedControl: UIControl {
-    open static let height: CGFloat = Constants.height + Constants.topBottomMargin * 2
+    public static let height: CGFloat = Constants.height + Constants.topBottomMargin * 2
 
     private struct Constants {
-        static let height: CGFloat = 30
+        static var height: CGFloat = 30
         static let topBottomMargin: CGFloat = 5
         static let leadingTrailingMargin: CGFloat = 10
     }
@@ -91,6 +91,26 @@ open class TwicketSegmentedControl: UIControl {
     open var font: UIFont = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium) {
         didSet {
             updateLabelsFont(with: font)
+        }
+    }
+    
+    open var height: CGFloat {
+        get {
+            return Constants.height
+        }
+        
+        set {
+            Constants.height = newValue
+        }
+    }
+    
+    open var cornerRadius: CGFloat {
+        get {
+            return sliderView.cornerRadius
+        }
+        
+        set {
+            sliderView.cornerRadius = newValue
         }
     }
 
