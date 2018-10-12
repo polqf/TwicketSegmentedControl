@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol TwicketSegmentedControlDelegate: class {
-    func twicketSegmentedControl(_ segmentedControl: TwicketSegmentedControl, didSelect segmentIndex: Int)
+    func didSelect(_ segmentIndex: Int, on segmentedControl: TwicketSegmentedControl)
 }
 
 open class TwicketSegmentedControl: UIControl {
@@ -287,7 +287,7 @@ open class TwicketSegmentedControl: UIControl {
         }
         let index = segmentIndex(for: location)
         move(to: index)
-        delegate?.twicketSegmentedControl(self, didSelect: index)
+        delegate?.didSelect(index, on: self)
     }
 
     open func move(to index: Int) {
