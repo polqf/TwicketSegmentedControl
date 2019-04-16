@@ -1,3 +1,5 @@
+Note: I have forked this for the purpose of fixing some bugs that have arisen in newer versions of Swift as well as adding a couple new features relating to sending .ValueChanged updates when the segment is changed. Below is the original readme:
+
 <p align=center><img src="http://twicketapp.github.io/Images/twicket_banner.jpg" height="300px"/></p>
 
 # TwicketSegmentedControl
