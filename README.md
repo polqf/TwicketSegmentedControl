@@ -77,12 +77,12 @@ __isSliderShadowHidden__: Bool - Boolean to decide if the slider should have sha
 ```
 use_frameworks!
 
-pod 'TwicketSegmentedControl'
+pod 'TwicketSegmentedControl', :git => 'https://github.com/thatmarcel/TwicketSegmentedControl'
 ```
 #### • Carthage
 
 ```
-github "twicketapp/TwicketSegmentedControl"
+github "thatmarcel/TwicketSegmentedControl"
 ```
 #### • Manually
 
