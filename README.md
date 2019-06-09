@@ -1,7 +1,7 @@
 <p align=center><img src="http://twicketapp.github.io/Images/twicket_banner.jpg" height="300px"/></p>
 
 # TwicketSegmentedControl
-![](https://img.shields.io/badge/Swift-3.0-blue.svg?style=flat)
+![](https://img.shields.io/badge/Swift-5.0-blue.svg?style=flat)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 <p align=center><img src="https://cloud.githubusercontent.com/assets/7887319/18714404/e77e7588-8015-11e6-939b-25f187a8b4d0.gif" height="400px"/></p>
@@ -9,6 +9,8 @@
 <p align=center><img src="Images/TwicketSegmentedCapture.jpg" height="200px"/></p>
 
 Custom UISegmentedControl replacement for iOS, written in Swift, used in the Twicket app.
+
+*This is a fork of a fork of the original that works with Swift 5.0*
 
 It handles the inertia of the movement, so you can “throw” the selector from one side to the other.
 
