@@ -81,7 +81,7 @@ pod 'TwicketSegmentedControl'
 #### • Carthage
 
 ```
-github "thatmarcel/TwicketSegmentedControl"
+github "twicketapp/TwicketSegmentedControl"
 ```
 #### • Manually
 
