@@ -1,7 +1,6 @@
 <p align=center><img src="http://twicketapp.github.io/Images/twicket_banner.jpg" height="300px"/></p>
 
 # TwicketSegmentedControl
-*This is a fork of a fork of the original that works with Swift 5.0*
 
 ![](https://img.shields.io/badge/Swift-5.0-blue.svg?style=flat)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
