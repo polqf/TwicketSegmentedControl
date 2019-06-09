@@ -13,7 +13,7 @@ public protocol TwicketSegmentedControlDelegate: class {
 }
 
 open class TwicketSegmentedControl: UIControl {
-    open static let height: CGFloat = Constants.height + Constants.topBottomMargin * 2
+    public static let height: CGFloat = Constants.height + Constants.topBottomMargin * 2
 
     private struct Constants {
         static let height: CGFloat = 30
