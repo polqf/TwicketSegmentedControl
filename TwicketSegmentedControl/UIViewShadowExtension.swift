@@ -15,7 +15,7 @@ extension UIView {
         layer.shadowOpacity = 0.7
         layer.shadowOffset = CGSize(width: 0, height: 5)
     }
-
+    
     func removeShadow() {
         layer.shadowOpacity = 0
     }
