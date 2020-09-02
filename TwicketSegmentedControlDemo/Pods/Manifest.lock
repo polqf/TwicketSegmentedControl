@@ -1,0 +1,21 @@
+PODS:
+  - TwicketSegmentedControl (0.1.2)
+
+DEPENDENCIES:
+  - TwicketSegmentedControl (from `https://github.com/justinackermann/TwicketSegmentedControl.git`)
+
+EXTERNAL SOURCES:
+  TwicketSegmentedControl:
+    :git: https://github.com/justinackermann/TwicketSegmentedControl.git
+
+CHECKOUT OPTIONS:
+  TwicketSegmentedControl:
+    :commit: 3a5b403c5ff00a889aa7cd5eabd3cf9f4843cff6
+    :git: https://github.com/justinackermann/TwicketSegmentedControl.git
+
+SPEC CHECKSUMS:
+  TwicketSegmentedControl: edb198a2314c219f9a26b9cfa121f6848f54a85a
+
+PODFILE CHECKSUM: 607325b0ba9545c353876e6c0a7abcd7489e7d90
+
+COCOAPODS: 1.9.1

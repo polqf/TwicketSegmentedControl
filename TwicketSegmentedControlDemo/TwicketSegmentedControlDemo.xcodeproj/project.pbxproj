@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51D48E2424FF47F3009EF5A6 /* TwicketSegmentedControl.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 51D48E2324FF47F2009EF5A6 /* TwicketSegmentedControl.podspec */; };
+		51D48E2624FF4B3E009EF5A6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 51D48E2524FF4B3E009EF5A6 /* Podfile */; };
+		8B246693B3FEE7EC713CDB0B /* Pods_TwicketSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D966ACB168ADB920D6F0CB /* Pods_TwicketSegmentedControl.framework */; };
 		C18581871D8D7220001A9A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18581861D8D7220001A9A00 /* AppDelegate.swift */; };
 		C18581891D8D7220001A9A00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18581881D8D7220001A9A00 /* ViewController.swift */; };
 		C185818C1D8D7220001A9A00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C185818A1D8D7220001A9A00 /* Main.storyboard */; };
@@ -18,6 +21,7 @@
 		C18581AD1D8D7265001A9A00 /* UIViewShadowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18581AA1D8D7265001A9A00 /* UIViewShadowExtension.swift */; };
 		C18581AE1D8D7265001A9A00 /* TwicketSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18581AB1D8D7265001A9A00 /* TwicketSegmentedControl.swift */; };
 		C18581AF1D8D7265001A9A00 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18581AC1D8D7265001A9A00 /* Palette.swift */; };
+		D2DE149B58C73F4AAE2480BC /* Pods_TwicketSegmentedControlDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04EEF09DD801059213071C0 /* Pods_TwicketSegmentedControlDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2ED6A73D2394301C0E3EBE6C /* Pods-TwicketSegmentedControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwicketSegmentedControl.debug.xcconfig"; path = "Target Support Files/Pods-TwicketSegmentedControl/Pods-TwicketSegmentedControl.debug.xcconfig"; sourceTree = "<group>"; };
+		344346750D4185E448C46E42 /* Pods-TwicketSegmentedControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwicketSegmentedControl.release.xcconfig"; path = "Target Support Files/Pods-TwicketSegmentedControl/Pods-TwicketSegmentedControl.release.xcconfig"; sourceTree = "<group>"; };
+		51D48E2324FF47F2009EF5A6 /* TwicketSegmentedControl.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TwicketSegmentedControl.podspec; path = ../TwicketSegmentedControl.podspec; sourceTree = "<group>"; };
+		51D48E2524FF4B3E009EF5A6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		6D3FD666DCFC0B1DC6B6884F /* Pods-TwicketSegmentedControlDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwicketSegmentedControlDemo.release.xcconfig"; path = "Target Support Files/Pods-TwicketSegmentedControlDemo/Pods-TwicketSegmentedControlDemo.release.xcconfig"; sourceTree = "<group>"; };
+		95D966ACB168ADB920D6F0CB /* Pods_TwicketSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwicketSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B04EEF09DD801059213071C0 /* Pods_TwicketSegmentedControlDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwicketSegmentedControlDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C18581831D8D7220001A9A00 /* TwicketSegmentedControlDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwicketSegmentedControlDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C18581861D8D7220001A9A00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C18581881D8D7220001A9A00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +69,7 @@
 		C18581AA1D8D7265001A9A00 /* UIViewShadowExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewShadowExtension.swift; sourceTree = "<group>"; };
 		C18581AB1D8D7265001A9A00 /* TwicketSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwicketSegmentedControl.swift; sourceTree = "<group>"; };
 		C18581AC1D8D7265001A9A00 /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		D33EB3D4CF3910F1C28ACBB8 /* Pods-TwicketSegmentedControlDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwicketSegmentedControlDemo.debug.xcconfig"; path = "Target Support Files/Pods-TwicketSegmentedControlDemo/Pods-TwicketSegmentedControlDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C18581A41D8D7237001A9A00 /* TwicketSegmentedControl.framework in Frameworks */,
+				D2DE149B58C73F4AAE2480BC /* Pods_TwicketSegmentedControlDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,18 +86,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B246693B3FEE7EC713CDB0B /* Pods_TwicketSegmentedControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5ECF06D0A64E3F9D3D24CF5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2ED6A73D2394301C0E3EBE6C /* Pods-TwicketSegmentedControl.debug.xcconfig */,
+				344346750D4185E448C46E42 /* Pods-TwicketSegmentedControl.release.xcconfig */,
+				D33EB3D4CF3910F1C28ACBB8 /* Pods-TwicketSegmentedControlDemo.debug.xcconfig */,
+				6D3FD666DCFC0B1DC6B6884F /* Pods-TwicketSegmentedControlDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C185817A1D8D7220001A9A00 = {
 			isa = PBXGroup;
 			children = (
 				C18581851D8D7220001A9A00 /* TwicketSegmentedControlDemo */,
 				C185819E1D8D7237001A9A00 /* TwicketSegmentedControl */,
 				C18581841D8D7220001A9A00 /* Products */,
+				A5ECF06D0A64E3F9D3D24CF5 /* Pods */,
+				FF0490FD0F569E6CB0750F8E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +127,8 @@
 		C18581851D8D7220001A9A00 /* TwicketSegmentedControlDemo */ = {
 			isa = PBXGroup;
 			children = (
+				51D48E2524FF4B3E009EF5A6 /* Podfile */,
+				51D48E2324FF47F2009EF5A6 /* TwicketSegmentedControl.podspec */,
 				C18581861D8D7220001A9A00 /* AppDelegate.swift */,
 				C18581881D8D7220001A9A00 /* ViewController.swift */,
 				C185818A1D8D7220001A9A00 /* Main.storyboard */,
@@ -123,6 +152,15 @@
 			path = ../TwicketSegmentedControl;
 			sourceTree = "<group>";
 		};
+		FF0490FD0F569E6CB0750F8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95D966ACB168ADB920D6F0CB /* Pods_TwicketSegmentedControl.framework */,
+				B04EEF09DD801059213071C0 /* Pods_TwicketSegmentedControlDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -141,10 +179,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C18581951D8D7220001A9A00 /* Build configuration list for PBXNativeTarget "TwicketSegmentedControlDemo" */;
 			buildPhases = (
+				1BE1753FF65A4BC8EBE63E76 /* [CP] Check Pods Manifest.lock */,
 				C185817F1D8D7220001A9A00 /* Sources */,
 				C18581801D8D7220001A9A00 /* Frameworks */,
 				C18581811D8D7220001A9A00 /* Resources */,
 				C18581A91D8D7237001A9A00 /* Embed Frameworks */,
+				A8BEFEA17574E5A78D134B95 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +200,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C18581A61D8D7237001A9A00 /* Build configuration list for PBXNativeTarget "TwicketSegmentedControl" */;
 			buildPhases = (
+				39BB04B215B02EF940E3BB3C /* [CP] Check Pods Manifest.lock */,
 				C18581981D8D7237001A9A00 /* Sources */,
 				C18581991D8D7237001A9A00 /* Frameworks */,
 				C185819A1D8D7237001A9A00 /* Headers */,
@@ -181,7 +222,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Pol Quintana";
 				TargetAttributes = {
 					C18581821D8D7220001A9A00 = {
@@ -192,14 +233,14 @@
 					C185819C1D8D7237001A9A00 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = TT6EHSB5EG;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1150;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = C185817E1D8D7220001A9A00 /* Build configuration list for PBXProject "TwicketSegmentedControlDemo" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -221,9 +262,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D48E2624FF4B3E009EF5A6 /* Podfile in Resources */,
 				C18581911D8D7220001A9A00 /* LaunchScreen.storyboard in Resources */,
 				C185818E1D8D7220001A9A00 /* Assets.xcassets in Resources */,
 				C185818C1D8D7220001A9A00 /* Main.storyboard in Resources */,
+				51D48E2424FF47F3009EF5A6 /* TwicketSegmentedControl.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +278,71 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BE1753FF65A4BC8EBE63E76 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TwicketSegmentedControlDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39BB04B215B02EF940E3BB3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TwicketSegmentedControl-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8BEFEA17574E5A78D134B95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TwicketSegmentedControlDemo/Pods-TwicketSegmentedControlDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TwicketSegmentedControl/TwicketSegmentedControl.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwicketSegmentedControl.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TwicketSegmentedControlDemo/Pods-TwicketSegmentedControlDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C185817F1D8D7220001A9A00 /* Sources */ = {
@@ -295,15 +403,24 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -326,12 +443,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -345,15 +463,24 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -370,10 +497,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -381,6 +509,7 @@
 		};
 		C18581961D8D7220001A9A00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D33EB3D4CF3910F1C28ACBB8 /* Pods-TwicketSegmentedControlDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -389,12 +518,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Pol-Quintana.TwicketSegmentedControlDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		C18581971D8D7220001A9A00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D3FD666DCFC0B1DC6B6884F /* Pods-TwicketSegmentedControlDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -403,12 +533,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Pol-Quintana.TwicketSegmentedControlDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 		C18581A71D8D7237001A9A00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ED6A73D2394301C0E3EBE6C /* Pods-TwicketSegmentedControl.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -426,7 +557,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -434,6 +565,7 @@
 		};
 		C18581A81D8D7237001A9A00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 344346750D4185E448C46E42 /* Pods-TwicketSegmentedControl.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -450,7 +582,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Pol-Quintana.TwicketSegmentedControl";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

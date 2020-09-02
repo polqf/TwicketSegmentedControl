@@ -1,0 +1,6 @@
+framework module Pods_TwicketSegmentedControl {
+  umbrella header "Pods-TwicketSegmentedControl-umbrella.h"
+
+  export *
+  module * { export * }
+}
