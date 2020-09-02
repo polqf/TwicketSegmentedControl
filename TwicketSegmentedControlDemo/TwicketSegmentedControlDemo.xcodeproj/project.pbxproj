@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51D48E2424FF47F3009EF5A6 /* TwicketSegmentedControl.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 51D48E2324FF47F2009EF5A6 /* TwicketSegmentedControl.podspec */; };
 		C18581871D8D7220001A9A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18581861D8D7220001A9A00 /* AppDelegate.swift */; };
 		C18581891D8D7220001A9A00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18581881D8D7220001A9A00 /* ViewController.swift */; };
 		C185818C1D8D7220001A9A00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C185818A1D8D7220001A9A00 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		51D48E2324FF47F2009EF5A6 /* TwicketSegmentedControl.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TwicketSegmentedControl.podspec; path = ../TwicketSegmentedControl.podspec; sourceTree = "<group>"; };
 		C18581831D8D7220001A9A00 /* TwicketSegmentedControlDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwicketSegmentedControlDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C18581861D8D7220001A9A00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C18581881D8D7220001A9A00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		C185819E1D8D7237001A9A00 /* TwicketSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
+				51D48E2324FF47F2009EF5A6 /* TwicketSegmentedControl.podspec */,
 				C18581AC1D8D7265001A9A00 /* Palette.swift */,
 				C18581AB1D8D7265001A9A00 /* TwicketSegmentedControl.swift */,
 				C18581AA1D8D7265001A9A00 /* UIViewShadowExtension.swift */,
@@ -224,6 +227,7 @@
 				C18581911D8D7220001A9A00 /* LaunchScreen.storyboard in Resources */,
 				C185818E1D8D7220001A9A00 /* Assets.xcassets in Resources */,
 				C185818C1D8D7220001A9A00 /* Main.storyboard in Resources */,
+				51D48E2424FF47F3009EF5A6 /* TwicketSegmentedControl.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
